@@ -95,6 +95,12 @@ select {
   --fw-regular: 400;
   --fw-bold: 700;
   --padding-x: 1rem;
+  --gradient-btn: linear-gradient(
+    135deg,
+    var(--clr-accent-purple) 0%,
+    var(--clr-accent-pink) 49.21%,
+    var(--clr-accent-orange) 100%
+  );
 }
 @media only screen and (min-width: 37.5em) {
   :root {
@@ -188,7 +194,7 @@ select {
 body {
   position: relative;
   font-family: "Epilogue Variable";
-  background-color: var(--clr-neutral-200);
+  background-color: var(--clr-neutral-100);
 }
 body::after {
   content: "";
@@ -199,6 +205,21 @@ body::after {
   height: 26.25rem;
   z-index: -10;
   background-color: var(--clr-neutral-200);
+}
+@media only screen and (min-width: 60em) {
+  body {
+    padding-inline: 1rem;
+  }
+  body::after {
+    height: 29rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  #root {
+    max-width: 69.375rem;
+    margin-inline: auto;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

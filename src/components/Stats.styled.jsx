@@ -13,6 +13,13 @@ const List = styled.ul`
     grid-template-columns: repeat(3, 1fr);
     margin-top: 8rem;
   }
+  @media only screen and (min-width: 60em) {
+    text-align: start;
+    grid-template-columns: revert;
+    margin-top: 0.15rem;
+    margin-right: 5rem;
+    gap: 4rem;
+  }
 `;
 const Number = styled.span`
   text-transform: uppercase;

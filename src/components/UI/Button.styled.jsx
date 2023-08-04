@@ -17,6 +17,15 @@ export const Button = styled.button`
     line-height: ${(props) => (props.primary ? 1.77778 : 2)};
     letter-spacing: ${(props) => (props.primary ? "-0.01125rem" : "-0.01rem")};
     padding: ${(props) =>
-      props.primary ? ".94rem 2rem .88rem" : ".75rem 1.5rem"};
+      props.primary ? ".94rem 2rem .88rem" : ".7rem 1.5rem"};
+  }
+  @media only screen and (min-width: 60em) {
+    cursor: pointer;
+    &:hover,
+    &:focus-visible {
+      background: ${(props) =>
+        props.primary ? "var(--gradient-btn)" : "var(--clr-neutral-400)"};
+      color: var(--clr-neutral-100);
+    }
   }
 `;

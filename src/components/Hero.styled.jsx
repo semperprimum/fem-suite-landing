@@ -19,6 +19,16 @@ const HeroWrapper = styled.section`
     margin-inline: var(--padding-x);
     padding: 21.13rem 3.6rem 4rem;
   }
+  @media only screen and (min-width: 60em) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5.5rem 7.81rem;
+    text-align: start;
+    margin-top: 18.2rem;
+
+    background-size: 4.00306rem;
+    background-position: top 10.07rem center;
+  }
 `;
 const Heading = styled.h2`
   font-weight: var(--fw-regular);
@@ -40,9 +50,17 @@ const PictureWrapper = styled.div`
     top: 3.5rem;
     left: 50%;
     filter: blur(4.375rem);
-
     transform: translateX(-50%);
     background-color: hsla(297, 68%, 64%, 1);
+
+    @media only screen and (min-width: 60em) {
+      width: 18.375rem;
+      height: 18.375rem;
+      top: 13.12rem;
+      left: 8.88rem;
+      transform: revert;
+      opacity: 0.4762;
+    }
   }
 `;
 const HeroPicture = styled.picture`
@@ -54,19 +72,37 @@ const HeroPicture = styled.picture`
     max-width: 15.75rem;
     margin-inline: auto;
   }
+  @media only screen and (min-width: 60em) {
+    top: revert;
+    left: 7.59rem;
+    bottom: 0;
+    transform: revert;
+    & img {
+      max-width: 22.48813rem;
+    }
+  }
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+  @media only screen and (min-width: 60em) {
+    margin-left: 5rem;
+  }
+`;
 
 const Body = styled.p`
   font-size: var(--fs-600);
   line-height: 1.77778;
   margin-block: 2.5rem;
   letter-spacing: 0.00563rem;
+
+  @media only screen and (min-width: 60em) {
+    line-height: 1.75;
+    letter-spacing: 0.00625rem;
+  }
 `;
 
 const Name = styled.strong`
-  font-size: var(--fs-600);
+  font-size: var(--fs-500);
   text-transform: uppercase;
   line-height: 1.77778;
   letter-spacing: -0.01125rem;
@@ -96,7 +132,7 @@ export function Hero() {
           job. This thing is a miracle worker.”
         </Body>
         <Name>Jeremy Robinson</Name>
-        <Role>CMO, Fylo</Role>
+        <Role className="text-neutral-200">CMO, Fylo</Role>
       </Content>
     </HeroWrapper>
   );

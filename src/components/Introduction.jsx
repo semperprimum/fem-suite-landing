@@ -7,6 +7,12 @@ import heroPortrait from "../assets/image-hero-portrait@2x.webp";
 const StyledIntroduction = styled.section`
   padding-inline: var(--padding-x);
   margin-top: 10.5rem;
+  @media only screen and (min-width: 60em) {
+    margin-top: 10.63rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
 `;
 
 const PrimaryHeading = styled.h1`
@@ -21,6 +27,11 @@ const PrimaryHeading = styled.h1`
     max-width: 75%;
     min-width: 29rem;
   }
+  @media only screen and (min-width: 60em) {
+    line-height: 1.08333;
+    letter-spacing: -0.0625rem;
+    max-width: 39.6875rem;
+  }
 `;
 
 const Bold = styled.span`
@@ -30,21 +41,29 @@ const Bold = styled.span`
 const Highlight = styled.span`
   position: relative;
   font-weight: var(--fw-bold);
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -1.75rem;
-    background-image: url(${curve});
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
+
+  @media only screen and (min-width: 21.25em) {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -1.75rem;
+      background-image: url(${curve});
+      height: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 
   @media only screen and (min-width: 37.5em) {
     &::after {
       top: -3rem;
+    }
+  }
+  @media only screen and (min-width: 60em) {
+    &::after {
+      top: -3.85rem;
     }
   }
 `;
@@ -61,6 +80,10 @@ const Body = styled.p`
     margin-bottom: 2.5rem;
     max-width: 50%;
   }
+  @media only screen and (min-width: 60em) {
+    max-width: 21.875rem;
+    margin-bottom: 3.25rem;
+  }
 `;
 
 const Picture = styled.picture`
@@ -72,6 +95,12 @@ const Picture = styled.picture`
     top: 5.75rem;
     z-index: -50;
     right: 2.5rem;
+  }
+  @media only screen and (min-width: 60em) {
+    margin-top: 0;
+    max-width: 21.875rem;
+    top: -6.5rem;
+    right: 17.85rem;
   }
 `;
 
