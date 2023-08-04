@@ -1,0 +1,66 @@
+@use "./components/reset";
+@use "./components/colors" as *;
+@use "./components/type-scale" as *;
+@use "./components/media-query" as *;
+
+:root {
+  // Color variables
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+  // Font size variables
+  @each $screen-size, $font-size in $type-scale {
+    @if $screen-size == mobile {
+      @each $size, $value in $font-size {
+        --fs-#{$size}: #{$value};
+      }
+    } @else {
+      @include mq($screen-size) {
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+  //   Font weight variables
+  @each $font-weight, $value in $font-weights {
+    --fw-#{$font-weight}: #{$value};
+  }
+
+  --padding-x: 1rem;
+  @include mq(tablet) {
+    --padding-x: 2.5rem;
+  }
+  @include mq(desktop) {
+    --padding-x: 0;
+  }
+}
+// Color utility classes
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .text-#{$color}-#{$shade} {
+      color: $value;
+    }
+    .bg-#{$color}-#{$shade} {
+      background-color: $value;
+    }
+  }
+}
+
+body {
+  position: relative;
+  font-family: "Epilogue Variable";
+  background-color: var(--clr-neutral-200);
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 26.25rem;
+    z-index: -10;
+    background-color: var(--clr-neutral-200);
+  }
+}
