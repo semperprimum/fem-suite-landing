@@ -6,7 +6,7 @@ import heroPortrait from "../assets/image-hero-portrait@2x.webp";
 
 const StyledIntroduction = styled.section`
   padding-inline: var(--padding-x);
-  margin-top: 5.21rem;
+  margin-top: 10.5rem;
 `;
 
 const PrimaryHeading = styled.h1`
@@ -14,6 +14,13 @@ const PrimaryHeading = styled.h1`
   font-weight: var(--fw-regular);
   line-height: 1.15789;
   letter-spacing: -0.033rem;
+
+  @media only screen and (min-width: 37.5em) {
+    line-height: 1.14286;
+    letter-spacing: -0.04863rem;
+    max-width: 75%;
+    min-width: 29rem;
+  }
 `;
 
 const Bold = styled.span`
@@ -34,6 +41,12 @@ const Highlight = styled.span`
     background-size: contain;
     background-repeat: no-repeat;
   }
+
+  @media only screen and (min-width: 37.5em) {
+    &::after {
+      top: -3rem;
+    }
+  }
 `;
 
 const Body = styled.p`
@@ -42,10 +55,24 @@ const Body = styled.p`
   line-height: 1.75;
   font-size: var(--fs-500);
   letter-spacing: 0.00556rem;
+
+  @media only screen and (min-width: 37.5em) {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 50%;
+  }
 `;
 
 const Picture = styled.picture`
   margin-top: 3.5rem;
+
+  @media only screen and (min-width: 37.5em) {
+    position: absolute;
+    max-width: 17.5625rem;
+    top: 5.75rem;
+    z-index: -50;
+    right: 2.5rem;
+  }
 `;
 
 export function Introduction() {

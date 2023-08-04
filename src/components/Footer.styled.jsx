@@ -8,9 +8,20 @@ const FooterWrapper = styled.footer`
   text-align: center;
   margin-top: 3.5rem;
   margin-bottom: 5rem;
+  margin: 3.5rem var(--padding-x) 5rem;
+  @media only screen and (min-width: 37.5em) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 4.5rem;
+  }
 `;
 const CopyrightText = styled.p`
   margin-block: 2.06rem;
+  line-height: 2.13333;
+  @media only screen and (min-width: 37.5em) {
+    margin-block: 0;
+  }
 `;
 const SocialsList = styled.ul`
   padding: 0;

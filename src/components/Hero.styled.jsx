@@ -8,13 +8,17 @@ const HeroWrapper = styled.section`
   border-radius: 0.9375rem;
   text-align: center;
   margin-top: 14.81rem;
-  /* padding-top: 21.13rem; */
   padding: 21.13rem var(--padding-x) 4rem;
 
   background-image: url(${curve});
   background-repeat: no-repeat;
   background-size: 3.07925rem;
   background-position: top 16.5rem center;
+
+  @media only screen and (min-width: 37.5em) {
+    margin-inline: var(--padding-x);
+    padding: 21.13rem 3.6rem 4rem;
+  }
 `;
 const Heading = styled.h2`
   font-weight: var(--fw-regular);

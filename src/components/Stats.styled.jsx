@@ -8,6 +8,11 @@ const List = styled.ul`
   gap: 2rem;
   margin: 0;
   margin-top: 3.5rem;
+
+  @media only screen and (min-width: 37.5em) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 8rem;
+  }
 `;
 const Number = styled.span`
   text-transform: uppercase;
